@@ -1,0 +1,39 @@
+live_config_reload = true
+
+import = [
+  "~/.config/alacritty/catppuccin-mocha.toml"
+]
+
+[shell]
+  program = "/usr/bin/zsh"
+  # program = "/usr/bin/bash"
+  # args = [ "-l", "-c", "tmux attach || tmux" ]
+
+[window]
+  # dimensions = { columns = 207, lines = 49 }
+  padding = { x = 5, y = 5 }
+  dynamic_padding = true
+  opacity = 0.75
+  blur = true
+  title = "Alacritty"
+  resize_increments = true
+  decorations = "none"
+
+[font]
+  normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+  size = 11
+
+[cursor]
+  style = { shape = "Beam", blinking = "On" }
+  vi_mode_style = { shape = "Underline" }
+
+[mouse]
+  hide_when_typing = true
+  bindings = [
+    { mouse = "Middle", action = "PasteSelection" }
+  ]
+
+[keyboard]
+  bindings = [
+    { key = "Return", mods = "Control|Shift", action = "SpawnNewInstance" }
+  ]
