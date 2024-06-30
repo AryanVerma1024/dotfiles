@@ -66,6 +66,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Aliases
 alias ls='ls --color=auto'
 alias la='ls --color=auto -a'
+alias cat='bat'
 alias grep='grep --color=auto'
 alias vim='nvim'
 alias c='clear'
