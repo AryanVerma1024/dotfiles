@@ -7,7 +7,9 @@ local M = {}
 M.ui = {
 	theme = "tokyonight",
   transparency = true,
-  theme_toggle = { "tokyonight", "tokyonight"},
+  statusline = {
+    separator_style = "block"
+  },
 
   hl_override = {
 		Comment = { italic = true },
