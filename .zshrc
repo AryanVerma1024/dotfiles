@@ -74,7 +74,9 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 alias ls='ls --color=auto'
-alias la='ls --color=auto -a'
+alias la='ls --color=auto -A'
+alias ll='ls --color=auto -lh'
+alias lla='ls --color=auto -lAh'
 alias cat='bat'
 alias grep='grep --color=auto'
 alias vim='nvim'
