@@ -7,8 +7,8 @@
 
 PS1='[\u@\h \W]\$ '
 
-if [ -f ~/.aliases ]; then
-    source ~/.aliases
+if [ -f ~/.sh/.aliases ]; then
+    source ~/.sh/.aliases
 fi
 
 # Load oh-my-posh

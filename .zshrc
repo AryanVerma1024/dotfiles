@@ -18,7 +18,7 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Catppuccin for zsh-syntax-highlighting
-source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
+source ~/.sh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
 # Plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -75,7 +75,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-source ~/.aliases
+source ~/.sh/.aliases
 
 # Shell integrations
 eval "$(fzf --zsh)"

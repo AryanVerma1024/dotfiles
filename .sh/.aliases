@@ -16,7 +16,11 @@ alias ....='cd ../../..'
 
 # bat
 if command -v bat &> /dev/null; then
-  alias cat='bat'
+  alias cat='bat --style header,snip,changes'
+  # bat help
+  bh() {
+    "$@" --help 2>&1 | bat -pl help
+  }
 fi
 
 # eza || ls
