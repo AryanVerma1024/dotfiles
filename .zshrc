@@ -61,12 +61,6 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-# fzf styling
-export FZF_DEFAULT_OPTS=" \
---color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
---color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
---color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
-
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
@@ -75,20 +69,21 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Functions
-if [ -f ~/.sh/functions ]; then
-  source ~/.sh/functions
-fi
+if [ -f ~/.sh/functions ]; then source ~/.sh/functions; fi
+
+# Exports
+if [ -f ~/.sh/exports ]; then source ~/.sh/exports; fi
 
 # Aliases
-if [ -f ~/.sh/aliases ]; then
-  source ~/.sh/aliases
-fi
+if [ -f ~/.sh/aliases ]; then source ~/.sh/aliases; fi
 
 # Shell integrations
-eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
+if check fzf; then eval "$(fzf --zsh)"; fi
+if check zoxide; then eval "$(zoxide init --cmd cd zsh)"; fi
 
 # nvm
-source /usr/share/nvm/init-nvm.sh
+if [ -f /usr/share/nvm/init-nvm.sh ]; then
+  source /usr/share/nvm/init-nvm.sh
+fi
 
 PATH=~/.console-ninja/.bin:$PATH
