@@ -73,17 +73,13 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias ls='ls --color=auto'
-alias la='ls --color=auto -A'
-alias ll='ls --color=auto -lh'
-alias lla='ls --color=auto -lAh'
-alias cat='bat'
-alias grep='grep --color=auto'
-alias vim='nvim'
-alias c='clear'
+source ~/.aliases
 
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+# nvm
+source /usr/share/nvm/init-nvm.sh
 
 PATH=~/.console-ninja/.bin:$PATH

@@ -2,14 +2,11 @@
 # ~/.bash_profile
 #
 
-[[ -f ~/.bashrc ]] && . ~/.bashrc
+[[ -f ~/.bashrc ]] && source ~/.bashrc
 
-alias ls='ls --color=auto'
-alias la='ls --color=auto -A'
-alias ll='ls --color=auto -lh'
-alias lla='ls --color=auto -lAh'
-alias grep='grep --color=auto'
-alias neofetch='fastfetch'
+if [ -f ~/.aliases ]; then
+    source ~/.aliases
+fi
 
 # Load oh-my-posh
 if [ -z "$TERM_PROGRAM" ] || [ "$TERM_PROGRAM" != "WarpTerminal" ]; then
