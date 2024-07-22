@@ -1,4 +1,9 @@
 #!/bin/sh
+#
+# ~/.sh/aliases
+#
+
+# This file contains aliases that are meant to be sourced by ~/.bashrc and ~/.zshrc.
 
 # useful
 alias c='clear'
