@@ -1,0 +1,6 @@
+#!/bin/sh
+# This file contains functions that are used in the shell configuration files
+
+check() {
+  if command -v $1 &> /dev/null; then return 0; else return 1; fi
+}

@@ -74,8 +74,15 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
+# Functions
+if [ -f ~/.sh/functions ]; then
+  source ~/.sh/functions
+fi
+
 # Aliases
-source ~/.sh/.aliases
+if [ -f ~/.sh/aliases ]; then
+  source ~/.sh/aliases
+fi
 
 # Shell integrations
 eval "$(fzf --zsh)"

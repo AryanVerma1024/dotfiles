@@ -15,7 +15,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 # bat
-if command -v bat &> /dev/null; then
+if check bat; then
   alias cat='bat --style header,snip,changes'
   # bat help
   bh() {
@@ -24,12 +24,15 @@ if command -v bat &> /dev/null; then
 fi
 
 # eza || ls
-if command -v eza &> /dev/null; then
+if check eza; then
   alias ls='eza'
   alias la='eza -a'
   alias ll='eza -l'
   alias lla='eza -la'
   alias l='eza -F'
+
+  # tree
+  alias tree='exa -T --git-ignore --icons'
 else
   alias ls='ls --color=auto'
   alias la='ls --color=auto -A'
@@ -38,13 +41,8 @@ else
   alias l='ls --color=auto -CF'
 fi
 
-# exa || tree
-if command -v exa &> /dev/null; then
-  alias tree='exa -T --git-ignore --icons'
-fi
-
 # ripgrep || grep
-if command -v rg &> /dev/null; then
+if check rg; then
   alias grep='rg'
 else
   alias grep='grep --color=auto'
