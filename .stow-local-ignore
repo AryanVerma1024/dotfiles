@@ -1,0 +1,16 @@
+\.git
+\.gitignore
+\.gitmodules
+
+^/README.*
+^/LICENSE.*
+^/COPYING
+
+# Visual Studio Code
+\.vscode
+
+# Local History for Visual Studio Code
+\.history
+
+# Built Visual Studio Code Extensions
+\*.vsix
