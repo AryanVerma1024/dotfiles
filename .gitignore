@@ -1,1 +1,11 @@
+# lazy.nvim version tracker
 lazy-lock.json
+
+# Visual Studio Code
+.vscode/*
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
