@@ -35,6 +35,10 @@ if [ -f /usr/share/bash-completion/bash_completion ]; then
   . /usr/share/bash-completion/bash_completion
 fi
 
+# Keybindings
+bind '"\C-p": history-search-backward'
+bind '"\C-n": history-search-forward'
+
 # fzf
 if check fzf; then eval "$(fzf --bash)"; fi
 
