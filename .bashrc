@@ -8,8 +8,8 @@
 
 # Source global definitions
 if [ -f ~/.sh/functions ]; then source ~/.sh/functions; fi
-if [ -f ~/.sh/aliases ]; then source ~/.sh/aliases; fi
 if [ -f ~/.sh/exports ]; then source ~/.sh/exports; fi
+if [ -f ~/.sh/aliases ]; then source ~/.sh/aliases; fi
 
 export SHELL=/bin/bash
 

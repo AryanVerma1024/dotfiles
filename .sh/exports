@@ -9,12 +9,19 @@
 # xdg
 export XDG_CONFIG_HOME="$HOME/.config"
 
+# bat / batcat ( debian/ubuntu )
+if check batcat; then
+  export BAT_BIN="batcat"
+elif check bat; then
+  export BAT_BIN="bat"
+fi
+
 # bat
-if check bat; then
-  export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+if [ -n "$BAT_BIN" ]; then
+  export MANPAGER="sh -c 'col -bx | $BAT_BIN -l man -p'"
   export MANROFFOPT="-c"
-  export PAGER="bat"
-  export BAT_CONFIG_PATH="$XDG_CONFIG_HOME/bat/config"
+  export PAGER="$BAT_BIN"
+  export BAT_CONFIG_PATH="$XDG_CONFIG_HOME/bat/config" # TODO: check if same on debian/ubuntu
 fi
 
 # fzf
@@ -25,7 +32,7 @@ if check fzf; then
     --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 
   export FZF_TMUX=1
-  export BAT_PREVIEW="bat --color=always --style=numbers --line-range=:500 {}"
+  export BAT_PREVIEW="$BAT_BIN --color=always --style=numbers --line-range=:500 {}"
 
   if check fd; then
     export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"

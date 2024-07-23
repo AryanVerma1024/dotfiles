@@ -20,11 +20,12 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 # bat
-if check bat; then
-  alias cat='bat --style header,snip,changes'
+# if check bat; then
+if [ -n "$BAT_BIN" ]; then
+  alias cat='$BAT_BIN --style header,snip,changes'
   # bat help
   bh() {
-    "$@" --help 2>&1 | bat -pl help
+    "$@" --help 2>&1 | $BAT_BIN -pl help
   }
 fi
 
