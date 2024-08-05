@@ -12,7 +12,13 @@ alias du='du -had1'
 alias df='df -h'
 alias free='free -m'
 
+alias sn='shutdown now'
+alias srn='shutdown -r now'
+
 alias neofetch='fastfetch'
+
+alias mirror='sudo reflector -f 30 -l 30 -n 10 --verbose --save /etc/pacman.d/mirrorlist'
+alias mirrors='sudo reflector -l 50 -n 20 --sort score --save /etc/pacman.d/mirrorlist'
 
 # nav
 alias ..='cd ..'
