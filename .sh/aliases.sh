@@ -28,7 +28,7 @@ alias ....='cd ../../..'
 # bat
 # if check bat; then
 if [ -n "$BAT_BIN" ]; then
-  alias cat='$BAT_BIN --style header,snip,changes'
+  alias cat='$BAT_BIN --style header,snip,changes,numbers'
   # bat help
   bh() {
     "$@" --help 2>&1 | $BAT_BIN -pl help
