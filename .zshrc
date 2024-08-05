@@ -85,5 +85,3 @@ if check zoxide; then eval "$(zoxide init --cmd cd zsh)"; fi
 if [ -f /usr/share/nvm/init-nvm.sh ]; then
   source /usr/share/nvm/init-nvm.sh
 fi
-
-PATH=~/.console-ninja/.bin:$PATH
