@@ -46,7 +46,12 @@ if check fzf; then
     }
   elif check rg; then
     export FZF_DEFAULT_COMMAND="rg --files --hidden"
-	else
-		export FZF_DEFAULT_COMMAND="find . -regextype 'posix-extended' -iregex '\.(git|cache|node_modules).*' -type d -prune -o -print"
+  else
+    export FZF_DEFAULT_COMMAND="find . -regextype 'posix-extended' -iregex '\.(git|cache|node_modules).*' -type d -prune -o -print"
   fi
+fi
+
+# Spicetify
+if [ -d "$HOME/.spicetify" ]; then
+  export PATH=$PATH:/home/aryan/.spicetify
 fi
