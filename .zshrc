@@ -69,13 +69,13 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Functions
-if [ -f ~/.sh/functions ]; then source ~/.sh/functions; fi
+if [ -f ~/.sh/functions.sh ]; then source ~/.sh/functions.sh; fi
 
 # Exports
-if [ -f ~/.sh/exports ]; then source ~/.sh/exports; fi
+if [ -f ~/.sh/exports.sh ]; then source ~/.sh/exports.sh; fi
 
 # Aliases
-if [ -f ~/.sh/aliases ]; then source ~/.sh/aliases; fi
+if [ -f ~/.sh/aliases.sh ]; then source ~/.sh/aliases.sh; fi
 
 # Shell integrations
 if check fzf; then eval "$(fzf --zsh)"; fi

@@ -7,9 +7,9 @@
 [[ $- != *i* ]] && return
 
 # Source global definitions
-if [ -f ~/.sh/functions ]; then source ~/.sh/functions; fi
-if [ -f ~/.sh/exports ]; then source ~/.sh/exports; fi
-if [ -f ~/.sh/aliases ]; then source ~/.sh/aliases; fi
+if [ -f ~/.sh/functions.sh ]; then source ~/.sh/functions.sh; fi
+if [ -f ~/.sh/exports.sh ]; then source ~/.sh/exports.sh; fi
+if [ -f ~/.sh/aliases.sh ]; then source ~/.sh/aliases.sh; fi
 
 export SHELL=/bin/bash
 
