@@ -44,7 +44,7 @@ if check eza; then
   alias l='eza -F'
 
   # tree
-  alias tree='exa -T --git-ignore --icons'
+  alias tree='eza -T --git-ignore --icons -I ".git|node_modules|.cache"'
 else
   alias ls='ls --color=auto'
   alias la='ls --color=auto -A'
@@ -58,4 +58,14 @@ if check rg; then
   alias grep='rg'
 else
   alias grep='grep --color=auto'
+fi
+
+# fd
+if check fd; then
+  alias fd='fd --hidden -E .git -E node_modules -E .cache'
+fi
+
+# tre
+if check tre; then
+  alias tre='tre -E "(.git(?!ignore|modules)|node_modules|cache)"'
 fi

@@ -35,19 +35,19 @@ if check fzf; then
   export BAT_PREVIEW="$BAT_BIN --color=always --style=numbers --line-range=:500 {}"
 
   if check fd; then
-    export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+    export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix -E .git -E node_modules -E .cache"
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-    export FZF_ALT_C_COMMAND="fd --type d --hidden --strip-cwd-prefix --exclude .git"
+    export FZF_ALT_C_COMMAND="fd --type d --hidden --strip-cwd-prefix -E .git -E node_modules -E .cache"
     _fzf_compgen_path() {
-      fd --hidden --exclude .git . "$1"
+      fd --hidden -E .git -E node_modules -E .cache . "$1"
     }
     _fzf_compgen_dir() {
-      fd --dir --hidden --exclude .git . "$1"
+      fd --dir --hidden -E .git -E node_modules -E .cache . "$1"
     }
   elif check rg; then
     export FZF_DEFAULT_COMMAND="rg --files --hidden"
   else
-    export FZF_DEFAULT_COMMAND="find . -regextype 'posix-extended' -iregex '\.(git|cache|node_modules).*' -type d -prune -o -print"
+    export FZF_DEFAULT_COMMAND="find . -regextype 'posix-extended' -iregex '(\.git(?!ignore|modules)|node_modules|cache).*' -type d -prune -o -print"
   fi
 fi
 
